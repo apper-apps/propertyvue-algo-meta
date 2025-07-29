@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../../App";
 import ApperIcon from "@/components/ApperIcon";
 import SearchBar from "@/components/molecules/SearchBar";
 import Button from "@/components/atoms/Button";
 
-const Header = ({ onSearch, favoritesCount = 0 }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Header = ({ onSearch, favoritesCount = 0, showLogout = false }) => {
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-
+  const { logout } = useContext(AuthContext);
   const navigation = [
     { name: "Browse", href: "/", icon: "Home" },
     { name: "Map View", href: "/map", icon: "Map" },
@@ -55,13 +56,26 @@ const Header = ({ onSearch, favoritesCount = 0 }) => {
                 )}
               </Link>
             ))}
-          </nav>
+</nav>
 
           {/* Search Bar - Desktop */}
           <div className="hidden md:flex flex-1 max-w-md mx-6">
             <SearchBar onSearch={onSearch} />
           </div>
 
+          {/* Logout Button - Desktop */}
+          {showLogout && (
+            <div className="hidden lg:block">
+              <Button
+                onClick={logout}
+                variant="ghost"
+                className="flex items-center gap-2 text-gray-600 hover:text-primary-600"
+              >
+                <ApperIcon name="LogOut" size={18} />
+                <span>Logout</span>
+              </Button>
+            </div>
+          )}
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -97,11 +111,22 @@ const Header = ({ onSearch, favoritesCount = 0 }) => {
                     <span className="bg-accent-500 text-white text-xs rounded-full px-2 py-0.5 ml-auto">
                       {favoritesCount}
                     </span>
-                  )}
+)}
                 </Link>
               ))}
+              {showLogout && (
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    logout();
+                  }}
+                  className="flex items-center gap-3 px-3 py-2 rounded-lg font-medium transition-all duration-200 text-gray-600 hover:text-primary-600 hover:bg-primary-50"
+                >
+                  <ApperIcon name="LogOut" size={18} />
+                  <span>Logout</span>
+                </button>
+              )}
             </nav>
-          </div>
         )}
       </div>
     </header>
