@@ -107,11 +107,11 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
                 >
                   <ApperIcon name={item.icon} size={18} />
                   <span>{item.name}</span>
-                  {item.name === "Favorites" && favoritesCount > 0 && (
+{item.name === "Favorites" && favoritesCount > 0 && (
                     <span className="bg-accent-500 text-white text-xs rounded-full px-2 py-0.5 ml-auto">
                       {favoritesCount}
                     </span>
-)}
+                  )}
                 </Link>
               ))}
               {showLogout && (
@@ -125,8 +125,9 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
                   <ApperIcon name="LogOut" size={18} />
                   <span>Logout</span>
                 </button>
-              )}
+)}
             </nav>
+          </div>
         )}
       </div>
     </header>
