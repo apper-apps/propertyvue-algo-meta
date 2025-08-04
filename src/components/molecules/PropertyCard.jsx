@@ -61,11 +61,11 @@ const PropertyCard = ({ property, onToggleFavorite }) => {
         <div className="p-4">
           <h3 className="font-display font-semibold text-lg text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
             {property.title}
-          </h3>
+</h3>
           
           <div className="flex items-center text-gray-600 mb-3">
             <ApperIcon name="MapPin" size={14} className="mr-1" />
-            <span className="text-sm">{property.city}, {property.state}</span>
+            <span className="text-sm">{property.address}, {property.city}, {property.state}</span>
           </div>
 
           <div className="flex items-center justify-between text-sm text-gray-600">
