@@ -1,5 +1,5 @@
 [
-  {
+{
     "Id": 1,
     "title": "Modern Downtown Penthouse",
     "price": 850000,
@@ -22,7 +22,8 @@
     "yearBuilt": 2018,
     "latitude": 37.7749,
     "longitude": -122.4194,
-    "isFavorite": false
+    "isFavorite": false,
+    "isvip": false
   },
   {
     "Id": 2,

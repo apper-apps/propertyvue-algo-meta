@@ -44,8 +44,9 @@ class PropertyService {
           { field: { Name: "amenities" } },
           { field: { Name: "yearBuilt" } },
           { field: { Name: "latitude" } },
-          { field: { Name: "longitude" } },
-          { field: { Name: "isFavorite" } }
+{ field: { Name: "longitude" } },
+          { field: { Name: "isFavorite" } },
+          { field: { Name: "isvip" } }
         ],
         where: [],
         orderBy: [
@@ -185,8 +186,9 @@ class PropertyService {
           { field: { Name: "amenities" } },
           { field: { Name: "yearBuilt" } },
           { field: { Name: "latitude" } },
-          { field: { Name: "longitude" } },
-          { field: { Name: "isFavorite" } }
+{ field: { Name: "longitude" } },
+          { field: { Name: "isFavorite" } },
+          { field: { Name: "isvip" } }
         ]
       };
 
@@ -233,8 +235,9 @@ class PropertyService {
           { field: { Name: "amenities" } },
           { field: { Name: "yearBuilt" } },
           { field: { Name: "latitude" } },
-          { field: { Name: "longitude" } },
-          { field: { Name: "isFavorite" } }
+{ field: { Name: "longitude" } },
+          { field: { Name: "isFavorite" } },
+          { field: { Name: "isvip" } }
         ],
         where: [{
           FieldName: "isFavorite",
@@ -346,9 +349,10 @@ class PropertyService {
           { field: { Name: "description" } },
           { field: { Name: "amenities" } },
           { field: { Name: "yearBuilt" } },
-          { field: { Name: "latitude" } },
+{ field: { Name: "latitude" } },
           { field: { Name: "longitude" } },
-          { field: { Name: "isFavorite" } }
+          { field: { Name: "isFavorite" } },
+          { field: { Name: "isvip" } }
         ],
         whereGroups: [{
           operator: "OR",
